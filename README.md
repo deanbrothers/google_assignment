@@ -3,6 +3,13 @@
 #Download Code\
 git clone https://github.com/deanbrothers/google_assignment.git\
 
+#Project Details\
+1. Q1: This folder contains the solution of <b>The Maximachine challenge</b>\
+2. Q2: This folder contains the food website which gives the fortune cookie.\
+#Demo link: https://agroezy.uc.r.appspot.com/ \
+3. Q3: This folder contains the database schema for carpet distributor company.\
+
+
 #Installation\
 Step1: Install python\
 	sudo apt-get install python3.7\
