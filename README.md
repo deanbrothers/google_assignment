@@ -1,6 +1,9 @@
 # google_assignment
 
-#Installation
+#Download Code\
+git clone https://github.com/deanbrothers/google_assignment.git\
+
+#Installation\
 Step1: Install python\
 	sudo apt-get install python3.7\
 Step2: Install pip\
@@ -9,10 +12,11 @@ Step3: Install virtualenv\
         sudo apt-get install python3.7-venv\
         python venv countryenv\
 Step4: Activate virtualenv\
-        source countryenv/bin/activate
-Step5: Install requirements
-        python -m pip install -r requirements.txt
-Step6: Migrate DB
-        python manage.py migrate
-Step6: Run Program
-        python manage.py runserver
+        source countryenv/bin/activate\
+Step5: Install requirements\
+	cd google_assignment/Q2/\
+        python -m pip install -r requirements.txt\
+Step6: Migrate DB\
+        python manage.py migrate\
+Step6: Run Program\
+        python manage.py runserver\
