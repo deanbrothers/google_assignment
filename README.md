@@ -27,3 +27,9 @@ Step6: Migrate DB\
         python manage.py migrate\
 Step6: Run Program\
         python manage.py runserver
+
+
+#TestCase Run
+1. python manage.py test fortune.tests.FortuneCookieTestCase.get_fortune_with_name \
+2. python manage.py test fortune.tests.CompanyTestCase.get_company_with_id
+
