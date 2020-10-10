@@ -1,14 +1,14 @@
 # google_assignment
 
 #Installation
-Step1: Install python
-#sudo apt-get install python3.7
-Step2: Install pip
-        sudo apt-get install python3-pip
-Step3: Install virtualenv
-        sudo apt-get install python3.7-venv
-        python venv countryenv
-Step4: Activate virtualenv
+Step1: Install python\
+	sudo apt-get install python3.7\
+Step2: Install pip\
+        sudo apt-get install python3-pip\
+Step3: Install virtualenv\
+        sudo apt-get install python3.7-venv\
+        python venv countryenv\
+Step4: Activate virtualenv\
         source countryenv/bin/activate
 Step5: Install requirements
         python -m pip install -r requirements.txt
