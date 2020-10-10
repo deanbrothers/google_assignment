@@ -1,0 +1,451 @@
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-104363160-1"></script>
+	<script>
+
+	</script>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CountrySide Food</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "assets/css/font-awesome.min.css" %}">
+        <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
+
+
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="{% static "assets/css/animate/animate.css" %}" />
+        <link rel="stylesheet" href="{% static "assets/css/plugins.css" %}" />
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}" />
+
+        <script src="{% static "assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js" %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		<div class='preloader'><div class='loaded'>&nbsp;</div></div>
+        <header id="home" class="navbar-fixed-top">
+            <!--<div class="header_top_menu clearfix">	
+                <div class="container">
+                    <div class="row">	
+                        <div class="col-md-5 col-md-offset-3 col-sm-12 text-right">
+                            <div class="call_us_text">
+								<a href=""><i class="fa fa-clock-o"></i> Order Foods 24/7</a>
+								<a href=""><i class="fa fa-phone"></i>9739654255</a>
+							</div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-12">
+                            <div class="head_top_social text-right">
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                            </div>	
+                        </div>
+
+                    </div>			
+                </div>
+            </div>-->
+
+            <!-- End navbar-collapse-->
+
+            <div class="main_menu_bg">
+                <div class="container"> 
+                    <div class="row">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand our_logo" href="#"><label  style="margin-top: 30px; color:#fff;"> CountrySide Food </label></a>
+                                    <!-- <a class="navbar-brand our_logo" href="#"><img src="{% static "assets/images/img/logo.png" %}" alt="" style="margin-top: 30px;"/></a> -->
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a href="#slider">Home</a></li>
+                                        <li><a href="#ourPakeg">Menu</a></li>
+                                        <li><a href="#abouts">About us</a></li>
+                                        <li><a href="#delivery">Delivery</a></li>
+                                        <li><a href="#footer_widget" id="order">Order</a></li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>	
+        </header> <!-- End Header Section -->
+
+        <section id="slider" class="">
+            <div id="successModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:forestgreen;color: ghostwhite;">
+                            <h5 class="modal-title">Data is saved successfully</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="failureModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:darkred;color: ghostwhite;">
+                            <h5 class="modal-title">Fortune cookie could not save.</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Hurray! You have unlocked the fortune cookie</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body coupon">
+                            <img src="{% static "images/ftbg.jpg" %}" alt="Avatar" style="width:100%;">
+                            <h4><b>{{fortune_cookie}}</b></h4> 
+                        </div>
+                        <div class="modal-footer">
+
+                            <form>
+                                <div class="form-group container row">
+                                    <input type="text" class="col-sm-5" style="margin-left: 4%;" placeholder="Enter your fortune cookie" id="fortuneOption" required>
+                                    <input type="text" class="col-sm-5 hidden" value={{fortune_id}} id="fortuneID">
+                                    <input type="text" class="col-sm-5 hidden" value={{csrf_token}} id="csrfToken">
+                                </div>
+                                <div class="form-group row">
+                                    <button type="submit" id="fortuneSave" class="btn btn-primary">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="orderModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Please place your order</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <form id="orderForm">
+                                    <div class="form-group row">
+                                        <select class="col-sm-5">
+                                            <option>Select Food</option>
+                                            <option value="1"> Chicken(4 piece) & Rice </option>
+                                            <option value="2"> Paratha(4 piece) & Chicken </option>
+                                            <option value="3"> Paratha(4 piece) & Vegitable </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your name" name="name" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your phone number" name="phone" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your address" name="address" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your city" name="city" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your state" name="state" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <input type="text" class="col-sm-5" placeholder="Enter your country" name="country" required>
+                                    </div>
+                                    <div class="form-group row">
+                                        <button type="submit" class="btn btn-primary" id="placeOrder">Place Order</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+
+    
+            <div class="slider_overlay">
+  			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="{% static "assets/images/img/2.jpg" %}" alt="Los Angeles">
+						<div class="carousel-caption">
+                            <div class="main_slider text-center">
+                                <div class="col-md-12">
+                                    <div class="main_slider_content wow zoomIn" data-wow-duration="1s">
+                                        <h1>CountrySide Food</h1>
+                                        <p>Experience Home Food.</p>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="{% static "assets/images/img/2h.jpg" %}" alt="Chicago">
+						<div class="carousel-caption">
+                            <div class="main_slider text-center">
+                                <div class="col-md-12">
+                                    <div class="main_slider_content wow zoomIn" data-wow-duration="1s">
+                                        <h1>CountrySide Food</h1>
+                                        <p>Experience Home Food.</p>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+					</div>
+
+					<div class="item">
+						<img src="{% static "assets/images/img/14.jpg" %}" alt="New York">
+						<div class="carousel-caption">
+                            <div class="main_slider text-center">
+                                <div class="col-md-12">
+                                    <div class="main_slider_content wow zoomIn" data-wow-duration="1s">
+                                        <h1>CountrySide Food</h1>
+                                        <p>Chicken Dill Se.</p>
+                                    </div>
+                                </div>	
+                            </div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+            </div>
+        </section>
+
+        <section id="ourPakeg" class="ourPakeg">
+            <div class="container">
+                <div class="main_pakeg_content">
+                    <div class="row">
+                        <div class="head_title text-center">
+                            <h4>CountrySide Food</h4>
+                        </div>
+
+                        <div class="single_pakeg_one text-right wow rotateInDownRight">
+                            <div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4">
+                                <div class="single_pakeg_text">
+                                    <div class="pakeg_title">
+                                        <h4>Single stomach</h4>
+                                    </div>
+
+                                    <ul>
+                                        <li> Chicken(4 piece) & Rice.....Rs.120 </li>
+                                        <li> Paratha(4 piece) & Chicken...........Rs.120 </li>
+                                        <li> Paratha(4 piece) & Sabji....Rs.60 </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single_pakeg_two text-left wow rotateInDownLeft">
+                            <div class="col-md-6 col-sm-8">
+                                <div class="single_pakeg_text">
+                                    <div class="pakeg_title">
+                                        <h4>Chicken</h4>
+                                    </div>
+
+                                    <ul>
+                                        <li> Chicken 250gm..............Rs.220 </li>
+                                        <li> Chicken 500gm..............Rs.400 </li>
+                                        <li> Chicken 1kg................Rs.620 </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single_pakeg_three text-left wow rotateInDownRight">
+                            <div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4">
+                                <div class="single_pakeg_text">
+                                    <div class="pakeg_title">
+                                        <h4>Rice/Roti/Paratha</h4>
+                                    </div>
+
+                                    <ul>
+                                        <li> Rice.................Rs.40(plate) </li>
+                                        <li> Paratha.................Rs.15(Piece) </li>
+                                        <li> Fulka...................Rs.7(Piece) </li>
+                                        <li> Ghee Fulka..............Rs.12(Piece) </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="abouts" class="abouts">
+            <div class="container">
+                <div class="row">
+                    <div class="abouts_content">
+                        <div class="col-md-6">
+                            <div class="single_abouts_text text-center wow slideInLeft" data-wow-duration="1s">
+                                <img src="{% static "assets/images/img/12.jpg" %}" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="single_abouts_text wow slideInRight" data-wow-duration="1s">
+                                <h4>About us</h4>
+                                <h3>Dehati Chicken</h3>
+                                <p>We want to deliver the home food to those who live away from the home and willing to eat home made chicken.</p>
+
+                                <p>We are foody but due to busy schedule sometimes we are not able to eat that yummy home made chicken. So LaThusaa will have the honour to bring back that village taste to your mouth with our great recipe.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="delivery" class="features">
+            <div class="slider_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_features_content_area  wow fadeIn" data-wow-duration="3s">
+                            <div class="col-md-12">
+                                <div class="main_features_content text-left">
+                                    <div class="col-md-6">
+                                        <div class="single_features_text">
+                                            <h4>Delivery Process</h4>
+                                            <p>As we are providing the home made chicken so once we get the order will start preparing the food. To prepare a tasty food it always takes time so will be taking an hour to prepare the food and deliver to you doorstep.  </p>
+                                            <p>Please takeout your phone and chose an item from our menu. Place your order over call or whatsapp on 9739654255 with your location.</p>
+                                            <p>You will get a confirmation message within 5minutes. Your food will be at your shared location within an hour.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer_widget" class="footer_widget">
+            <div class="container">
+                <div class="row">
+                    <div class="footer_widget_content text-center">
+                        <div class="col-md-4">
+                            <div class="single_widget wow fadeIn" data-wow-duration="2s">
+                                <h3>Location where we are</h3>
+
+                                <div class="single_widget_info">
+                                        <span>BTM</span>
+                                        <span>JP Nagar</span>
+                                        <span>HSR</span>
+                                        <!--<span>RR Nagar</span>-->
+                                </div>
+
+                                <div class="footer_socail_icon">
+                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="single_widget wow fadeIn" data-wow-duration="4s">
+                                <h3>Take it easy with home delivery</h3>
+
+                                <div class="single_widget_info">
+                                    <p><span class="date_day">Monday To Sunday</span>
+                                        <span>12:00pm to 10:00pm(Lunch/Dinner)</span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="single_widget wow fadeIn" data-wow-duration="5s">
+                                <h3>Order on whatsapp or call on</h3>
+
+                                <div class="single_widget_info">
+                                    <p><span class="date_day"></span>
+                                        <span>9739654255</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+        <!--Footer-->
+        <footer id="footer" class="footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="copyright wow zoomIn" data-wow-duration="3s">
+						</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		
+		<div class="scrollup">
+			<a href="#"><i class="fa fa-chevron-up"></i></a>
+		</div>		
+
+
+        <script src="{% static "assets/js/vendor/jquery-1.11.2.min.js" %}"></script>
+        <script src="{% static "assets/js/vendor/bootstrap.min.js" %}"></script>
+
+        <script src="{% static "assets/js/jquery-easing/jquery.easing.1.3.js" %}"></script>
+        <script src="{% static "assets/js/wow/wow.min.js" %}"></script>
+        <script src="{% static "assets/js/common.js" %}"></script>
+        <script src="{% static "assets/js/main.js" %}"></script>
+
+    </body>
+</html>
