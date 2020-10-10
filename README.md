@@ -1,7 +1,7 @@
 # google_assignment
 
 #Download Code\
-git clone https://github.com/deanbrothers/google_assignment.git\
+git clone https://github.com/deanbrothers/google_assignment.git
 
 #Project Details
 1. Q1: This folder contains the solution of <b>The Maximachine challenge</b>
