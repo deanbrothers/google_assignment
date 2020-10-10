@@ -19,4 +19,4 @@ Step5: Install requirements\
 Step6: Migrate DB\
         python manage.py migrate\
 Step6: Run Program\
-        python manage.py runserver\
+        python manage.py runserver
