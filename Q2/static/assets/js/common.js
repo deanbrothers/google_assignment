@@ -43,7 +43,7 @@ var getData = async(request_url, method, data, csrf_token) =>{
 }
 
 
-$('#placeOrder').click(async function(event){
+$('#orderForm').submit(async function(event){
 	event.preventDefault();
 	$("#orderModal").modal('hide');
 	let data = $('#orderForm').serialize();
