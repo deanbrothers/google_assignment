@@ -1041,3 +1041,57 @@ font-size: 6rem;
   .expire {
     color: red;
   }
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.card div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    position: inherit;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.card .front {
+  background: red;
+}
+.card .back {
+    background: blue;
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+.failed-modal{
+    background-color:darkred;color: ghostwhite;
+}
+
+.close-cross{
+    color:#ffffff;
+    opacity: 0;
+    margin-top: -40px;
+}
+

@@ -7,7 +7,7 @@ $('#order').click(function(){
     $("#orderModal").modal('show');
 })
 
-$('#fortuneSave').click(async function(event){
+$('#fortuneSave').submit(async function(event){
 	event.preventDefault();
 	let fortune_option=$('#fortuneOption').val();
 	let fortune_id=$('#fortuneID').val();
@@ -50,4 +50,13 @@ $('#placeOrder').click(async function(event){
 	let csrf = $('#csrfToken').val()
     await getData('/saveorder/', 'post', data, csrf);
 
+});
+
+$('#dispalyCookie').click(function(event) {
+	event.preventDefault();
+	$('.back').show();
+	$('.footer-content').show();
+	$('.front').hide();
+	$('.cookei-header').hide();
+	
 });

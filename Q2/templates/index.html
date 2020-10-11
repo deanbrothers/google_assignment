@@ -105,7 +105,7 @@
                     <div class="modal-content">
                         <div class="modal-header" style="background-color:forestgreen;color: ghostwhite;">
                             <h5 class="modal-title">Data is saved successfully</h5>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <button type="button" class="close close-cross" data-dismiss="modal">&times;</button>
                         </div>
                     </div>
                 </div>
@@ -113,9 +113,9 @@
             <div id="failureModal" class="modal fade">
                 <div class="modal-dialog">
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color:darkred;color: ghostwhite;">
-                            <h5 class="modal-title">Fortune cookie could not save.</h5>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="modal-header failed-modal">
+                            <h5 class="modal-title">Data could not save.</h5>
+                            <button type="button" class="close close-cross" data-dismiss="modal">&times;</button>
                         </div>
                     </div>
                 </div>
@@ -124,13 +124,13 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Hurray! You have unlocked the fortune cookie, please click on image</h5>
+                            <h5 class="modal-title cookei-header">Hurray! You have unlocked the fortune cookie, please click on image</h5>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body coupon">
                             <div>
                                 <div class="front"  id="dispalyCookie">
-                                    <img src="{% static "images/ftbg.jpg" %}" alt="Avatar" style="width:100%;">
+                                    <img src="{% static "assets/images/ftbg.jpg" %}" alt="Avatar" style="width:100%;">
                                 </div>
                                 <div class="back" style="display:none;">
                                     <h4><b>{{fortune_cookie}}</b></h4> 
@@ -140,14 +140,14 @@
                         </div>
                         <div class="modal-footer">
 
-                            <form style="display: none;" class="footer-content">
+                            <form style="display: none;" class="footer-content" id="fortuneSave">
                                 <div class="form-group container row">
                                     <input type="text" class="col-sm-5" style="margin-left: 4%;" placeholder="Enter your fortune cookie" id="fortuneOption" required>
                                     <input type="text" class="col-sm-5 hidden" value={{fortune_id}} id="fortuneID">
                                     <input type="text" class="col-sm-5 hidden" value={{csrf_token}} id="csrfToken">
                                 </div>
                                 <div class="form-group row">
-                                    <button type="submit" id="fortuneSave" class="btn btn-primary">Add</button>
+                                    <button type="submit"  class="btn btn-primary">Add</button>
                                 </div>
                             </form>
                         </div>
