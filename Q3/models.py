@@ -33,7 +33,7 @@ class Carpet(models.Model):
 
 
 class CarpetRoll(models.Model):
-    """ Carpet Type Model """
+    """ Carpet Roll Model """
     carpet = models.ForeignKey(Carpet, on_delete=models.CASCADE)
     roll_r1_width = models.FloatField()
     roll_r1_length = models.FloatField()
@@ -64,7 +64,7 @@ class PurchaseOrder(models.Model):
 
 
 class PurchaseOrderCarpet(models.Model):
-    """ Carpets in purchase order """
+    """ Carpets details for purchase order """
     carpet = models.ForeignKey(Carpet, on_delete=models.CASCADE)
     purchase_order = models.ForeignKey(PurchaseOrder, on_delete=models.CASCADE)
     carpet_width = models.FloatField()
@@ -97,7 +97,7 @@ class Order(models.Model):
         return self.customer_id.name
 
 class Orderdetails(models.Model):
-    """ Carpet Type Model """
+    """ Order details Model """
     order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
     roll_id = models.ForeignKey(CarpetRoll, on_delete=models.CASCADE)
     carpet_id = models.ForeignKey(Carpet, on_delete=models.CASCADE)
