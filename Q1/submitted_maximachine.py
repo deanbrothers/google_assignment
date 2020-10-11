@@ -7,32 +7,48 @@ import re
 import sys
 from itertools import permutations
 
-machine_line = ['P1', 'P2', 'P3', 'M1', 'M2', 'M3']
-work_value = {'P1':-2, 'P2':-4, 'P3':'w/2', 'M1':2, 'M2':4, 'M3':'w*2'}
+maxi_array = ['P1', 'P2', 'P3', 'M1', 'M2', 'M3']
+maxi_value = {'P1':-2, 'P2':-4, 'P3':'w/2', 'M1':2, 'M2':4, 'M3':'w*2'}
 
-def get_work(work):
-    sum = 0
+def get_work_sum(work):
+    """Function will find the sum of work"""
+    work_sum = 0
     for w in work:
         if w not in ['P3', 'M3']:
-            sum = sum + work_value[w]
+            work_sum = work_sum + maxi_value[w]
         if w == 'P3':
-            sum = round(sum/2)
+            work_sum = round(work_sum/2)
         if w == 'M3':
-            sum = sum * 2
-        if sum <= 0 or sum > 16:
-            sum = 0
+            work_sum = work_sum * 2
+        if work_sum <= 0 or work_sum > 16:
+            work_sum = 0
             break
-    return sum
+    return work_sum
 
 
-def get_assembly(input_set):
-    assembly_set = []
+def get_combination_set(input_set):
+    """Function to find possible combibation set"""
+    combination_set = []
     for i, x in enumerate(input_set):
         if x > 0:
             for j in range(x):
-                assembly_set.append(machine_line[i])
-    return assembly_set
+                combination_set.append(maxi_array[i])
+    return combination_set
 
+
+def get_max_work(possible_work):
+    """Function to find the max work"""
+    max_work = 0
+    for work in possible_work:
+        if work[0] in ['P1', 'P2', 'P3']:
+            pass
+        else:
+            work_sum = get_work_sum(work)
+            if work_sum > max_work and work_sum <= 16 and work_sum > 0:
+                max_work = work_sum
+
+    return max_work
+    
 
 
 if __name__ == '__main__':
@@ -51,16 +67,8 @@ if __name__ == '__main__':
     m3 = int(first_multiple_input[5])
     input_set = [int(inp) for inp in first_multiple_input]
     total_length = sum(input_set)
-    assembly_line = get_assembly(input_set)
-    possible_work = permutations(assembly_line, total_length)
-    max_work = 0
-    for work in possible_work:
-        if work[0] in ['P1', 'P2', 'P3']:
-            pass
-        else:
-            work_sum = get_work(work)
-            if work_sum > max_work and work_sum <= 16 and work_sum > 0:
-                max_work = work_sum
-
-    print(max_work)
+    combination_set = get_combination_set(input_set)
+    possible_work = permutations(combination_set, total_length)
+    max_work_value = get_max_work(possible_work)
+    print(max_work_value)
 
