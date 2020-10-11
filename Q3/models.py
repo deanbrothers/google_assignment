@@ -86,7 +86,7 @@ class Customer(models.Model):
         return self.customer_name
 
 class Order(models.Model):
-    """ Carpet Type Model """
+    """ Order Model """
     customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
     order_date = models.DateField()
     total_cost = models.FloatField()

@@ -124,16 +124,23 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Hurray! You have unlocked the fortune cookie</h5>
+                            <h5 class="modal-title">Hurray! You have unlocked the fortune cookie, please click on image</h5>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body coupon">
-                            <img src="{% static "images/ftbg.jpg" %}" alt="Avatar" style="width:100%;">
-                            <h4><b>{{fortune_cookie}}</b></h4> 
+                            <div>
+                                <div class="front"  id="dispalyCookie">
+                                    <img src="{% static "images/ftbg.jpg" %}" alt="Avatar" style="width:100%;">
+                                </div>
+                                <div class="back" style="display:none;">
+                                    <h4><b>{{fortune_cookie}}</b></h4> 
+                                </div>
+                              </div>
+
                         </div>
                         <div class="modal-footer">
 
-                            <form>
+                            <form style="display: none;" class="footer-content">
                                 <div class="form-group container row">
                                     <input type="text" class="col-sm-5" style="margin-left: 4%;" placeholder="Enter your fortune cookie" id="fortuneOption" required>
                                     <input type="text" class="col-sm-5 hidden" value={{fortune_id}} id="fortuneID">
